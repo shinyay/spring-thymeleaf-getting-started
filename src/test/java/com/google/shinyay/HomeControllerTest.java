@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @SpringBootTest(classes = HomeController.class)
 @AutoConfigureMockMvc
@@ -24,5 +25,11 @@ public class HomeControllerTest {
         mockMvc.perform(get("/")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(status().is2xxSuccessful());
+    }
+
+    @Test
+    void rootAccessShouldReturnHomeTemplate() throws Exception {
+        mockMvc.perform(get("/")).andDo(print())
+                .andExpect(view().name("home"));
     }
 }
