@@ -6,17 +6,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Controller
 public class HomeController {
 
     @GetMapping("/")
     public String homeGet(Model model) {
+        String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
+        model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello");
         return "home";
     }
 
     @PostMapping("/")
     public String homePost(Model model, @RequestBody String name) {
+        String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
+        model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello, "+ name);
         return "home";
     }
