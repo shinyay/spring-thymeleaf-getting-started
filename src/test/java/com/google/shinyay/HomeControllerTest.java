@@ -9,9 +9,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest(classes = HomeController.class)
 @AutoConfigureMockMvc
@@ -31,5 +31,12 @@ public class HomeControllerTest {
     void rootAccessShouldReturnHomeTemplate() throws Exception {
         mockMvc.perform(get("/")).andDo(print())
                 .andExpect(view().name("home"));
+    }
+
+    @Test
+    void postDataShouldDisplay() throws Exception {
+        String postName = "Alice";
+        mockMvc.perform(post("/").content(postName)).andDo(print())
+                .andExpect(model().attribute("th_greet", "Hello, "+ postName));
     }
 }
