@@ -18,7 +18,7 @@ public class HomeController {
         String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello");
-        return "home";
+        return "index";
     }
 
     @PostMapping("/")
@@ -26,6 +26,6 @@ public class HomeController {
         String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello, "+ name);
-        return "home";
+        return "index";
     }
 }
