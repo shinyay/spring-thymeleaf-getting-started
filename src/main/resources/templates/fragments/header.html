@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div class="alert alert-primary" role="alert" th:fragment="header_fragment">
+<div class="alert alert-primary" role="alert" th:fragment="header_fragment(th_current)">
     <div th:text="${th_current}"></div>
 </div>
 
