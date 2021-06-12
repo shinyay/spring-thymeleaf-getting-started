@@ -1,6 +1,6 @@
 package com.google.shinyay;
 
-import com.google.shinyay.controller.HomeController;
+import com.google.shinyay.controller.IndexController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest(classes = HomeController.class)
+@SpringBootTest(classes = IndexController.class)
 @AutoConfigureMockMvc
 public class HomeControllerTest {
 
