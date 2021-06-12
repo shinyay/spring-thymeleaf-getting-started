@@ -8,3 +8,6 @@ spring:
     suffix: .html
   application:
     name: Spring Bootstrap
+app:
+  config:
+    author: shinyay
