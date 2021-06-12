@@ -11,10 +11,10 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Controller
-public class HomeController {
+public class IndexController {
 
     @GetMapping("/")
-    public String homeGet(Model model) {
+    public String indexGet(Model model) {
         String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello");
@@ -22,7 +22,7 @@ public class HomeController {
     }
 
     @PostMapping("/")
-    public String homePost(Model model, @RequestBody String name) {
+    public String indexPost(Model model, @RequestBody String name) {
         String currentTime = ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
         model.addAttribute("th_current", currentTime);
         model.addAttribute("th_greet", "Hello, "+ name);
