@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/home")
 public class HomeController {
 
+    private final ConfigProperties props;
+
+    public HomeController(ConfigProperties props) {
+        this.props = props;
+    }
 
     @Value("${spring.application.name}")
     String appName;
@@ -18,6 +23,7 @@ public class HomeController {
     @GetMapping("/hello")
     public String helloPage(Model model) {
         model.addAttribute("appName", appName);
+        model.addAttribute("author", props.getAuthor());
         return "home";
     }
 
