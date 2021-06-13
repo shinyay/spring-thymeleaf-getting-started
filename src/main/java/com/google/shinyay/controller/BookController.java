@@ -35,7 +35,8 @@ public class BookController {
 
     @PostMapping("/books")
     @ResponseStatus(HttpStatus.CREATED)
-    public Book create(@RequestBody Book book) {
+    public Book createBook(@RequestBody Book book) {
         return repository.save(book);
     }
+
 }
