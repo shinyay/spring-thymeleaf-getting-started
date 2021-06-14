@@ -44,6 +44,8 @@ public class BookController {
     @PutMapping("/books/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Book updateBook(@RequestBody Book book, @PathVariable Long id) {
-
+        if (book.getId() != id) {
+            throw new BookMismatchException();
+        }
     }
 }
