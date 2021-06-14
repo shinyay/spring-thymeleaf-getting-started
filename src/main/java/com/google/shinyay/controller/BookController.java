@@ -1,6 +1,8 @@
 package com.google.shinyay.controller;
 
 import com.google.shinyay.entity.Book;
+import com.google.shinyay.exception.BookMismatchException;
+import com.google.shinyay.exception.BookNotFoundException;
 import com.google.shinyay.repository.BookRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +32,7 @@ public class BookController {
     @GetMapping("/books/{id}")
     public Book findOneBook(@PathVariable Long id) {
         return repository.findById(id)
-                .orElseThrow();
+                .orElseThrow(BookMismatchException::new);
     }
 
     @PostMapping("/books")
