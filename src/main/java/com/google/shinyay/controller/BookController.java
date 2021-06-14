@@ -51,4 +51,11 @@ public class BookController {
         }
         return repository.save(book);
     }
+
+    @DeleteMapping("/books/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBook(@PathVariable Long id) {
+        repository.findById(id).orElseThrow();
+        repository.deleteById(id);
+    }
 }
