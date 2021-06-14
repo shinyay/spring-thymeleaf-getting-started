@@ -46,6 +46,9 @@ public class BookController {
     public Book updateBook(@RequestBody Book book, @PathVariable Long id) {
         if (book.getId() != id) {
             throw new BookMismatchException();
+        } else {
+            repository.findById(id).orElseThrow(BookNotFoundException::new);
         }
+        return repository.save(book);
     }
 }
