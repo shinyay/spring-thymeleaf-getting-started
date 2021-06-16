@@ -1,5 +1,7 @@
 package com.google.shinyay.exception;
 
+import org.hibernate.exception.ConstraintViolationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,4 +23,15 @@ public class BookControllerAdvice extends ResponseEntityExceptionHandler {
                 request);
     }
 
+    @ExceptionHandler({BookMismatchException.class,
+            DataIntegrityViolationException.class,
+            ConstraintViolationException.class})
+    public ResponseEntity<Object> handleBadRequest(Exception e, WebRequest request) {
+        return handleExceptionInternal(
+                e,
+                e.getLocalizedMessage(),
+                new HttpHeaders(),
+                HttpStatus.BAD_REQUEST,
+                request);
+    }
 }
