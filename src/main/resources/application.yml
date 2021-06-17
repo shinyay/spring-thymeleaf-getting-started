@@ -1,5 +1,9 @@
 server:
   port: 8080
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
 spring:
   thymeleaf:
     enabled: true
