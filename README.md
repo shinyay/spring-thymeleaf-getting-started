@@ -1,6 +1,6 @@
-# Name
+# Getting started with Thymeleaf
 
-Overview
+Thymeleaf is a Java XML/XHTML/HTML5 template engine.
 
 ## Description
 
