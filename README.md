@@ -8,6 +8,32 @@ Thymeleaf is a Java XML/XHTML/HTML5 template engine.
 ### Dependency
 - `org.springframework.boot:spring-boot-starter-thymeleaf`
 
+### Basics
+- By default, Spring Boot looks for the templates in `src/main/resources/templates`.
+- Template filename is `Return-Value-by-Controller`.html
+
+```java
+@GetMapping("/hello")
+public String hello(Model model) {
+    model.addAttribute("message", "Hello Thymeleaf!!");
+    return "hello";
+}
+```
+
+`src/main/resources/templates/hello.html`
+```html
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello Thymeleaf</title>
+    </head>
+    <body>
+        <h1 th:text="${message}"></h1>
+    </body>
+</html>
+```
+
 ## Demo
 
 ## Features
