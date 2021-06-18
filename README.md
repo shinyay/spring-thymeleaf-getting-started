@@ -5,6 +5,8 @@ Thymeleaf is a Java XML/XHTML/HTML5 template engine.
 - [Thymeleaf](https://www.thymeleaf.org/)
 
 ## Description
+### Dependency
+- `org.springframework.boot:spring-boot-starter-thymeleaf`
 
 ## Demo
 
@@ -20,6 +22,7 @@ Thymeleaf is a Java XML/XHTML/HTML5 template engine.
 ## Installation
 
 ## References
+- [Template Properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#application-properties.templating)
 
 ## Licence
 
