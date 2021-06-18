@@ -7,6 +7,7 @@ Thymeleaf is a Java XML/XHTML/HTML5 template engine.
 ## Description
 ### Dependency
 - `org.springframework.boot:spring-boot-starter-thymeleaf`
+- `org.webjars:bootstrap:5.0.1`
 
 ### Basics
 - By default, Spring Boot looks for the templates in `src/main/resources/templates`.
@@ -33,6 +34,9 @@ public String hello(Model model) {
     </body>
 </html>
 ```
+
+### Bootstrap by WebJar
+
 
 ## Demo
 
