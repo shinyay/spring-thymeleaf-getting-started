@@ -3,9 +3,12 @@ package com.google.shinyay;
 import com.google.shinyay.entity.Book;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookTest {
 
@@ -24,5 +27,10 @@ public class BookTest {
                 .body(book)
                 .post(BOOK_API);
         return BOOK_API + "/" + response.jsonPath().get("id");
+    }
+
+    @Test
+    public void whenGetAllBooks_thenOk() {
+        assertThat(RestAssured.get(BOOK_API)).isEqualTo(HttpStatus.OK.value());
     }
 }
