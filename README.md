@@ -40,6 +40,9 @@ WebJars are client-side web libraries ,which are like Bootstrap, packaged into J
 
 - [WebJars](https://www.webjars.org/)
 
+We use Bootstrap 5.0.1 here.
+- `implementation 'org.webjars:bootstrap:5.0.1'`
+
 ## Demo
 
 ## Features
