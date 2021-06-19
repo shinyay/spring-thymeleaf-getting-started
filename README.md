@@ -43,6 +43,17 @@ WebJars are client-side web libraries ,which are like Bootstrap, packaged into J
 We use Bootstrap 5.0.1 here.
 - `implementation 'org.webjars:bootstrap:5.0.1'`
 
+You can refer WebJar asset like the followings:
+```html
+<head>
+    <link rel="stylesheet"th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
+</head>
+```
+
+
+
+
 ## Demo
 
 ## Features
