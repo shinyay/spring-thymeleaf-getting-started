@@ -51,7 +51,16 @@ You can refer WebJar asset like the followings:
 </head>
 ```
 
+#### Omit WebJar version
+`webjars-locator` enables you to omit the webjars version.
+- `implementation 'org.webjars:webjars-locator:0.41'`
 
+```html
+<head>
+    <link rel="stylesheet"th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
+</head>
+```
 
 
 ## Demo
